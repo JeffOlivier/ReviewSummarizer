@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL ?? '';
+
 type Review = {
     id: number;
     author: string;
@@ -20,20 +22,22 @@ export type SummarizeResponse = {
 export const reviewsApi = {
     fetchReviews(productId: number) {
         // const { data } = await axios.get<GetReviewsResponse>(
-        //     `/api/products/${productId}/reviews`
+        //     `${API_URL}/api/products/${productId}/reviews`
         // );
         // return data;
 
         // A cleaner version of the above
         return axios
-            .get<GetReviewsResponse>(`/api/products/${productId}/reviews`)
+            .get<GetReviewsResponse>(
+                `${API_URL}/api/products/${productId}/reviews`
+            )
             .then((res) => res.data);
     },
 
     summarizeReviews(productId: number) {
         return axios
             .post<SummarizeResponse>(
-                `/api/products/${productId}/reviews/summarize`
+                `${API_URL}/api/products/${productId}/reviews/summarize`
             )
             .then((res) => res.data);
     },
