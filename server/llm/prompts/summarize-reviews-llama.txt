@@ -1,0 +1,3 @@
+Summarize the following customer reviews inot a short paragraph highlighting key themes, both positive and negative:
+
+Do not start the summary with "As an AI language model..." or "The customer reviews for ..." or "This customer ..."
