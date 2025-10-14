@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, be, backend, nyc3, prod, be, reviews, api]
+    runs-on: [self-hosted, be, backend, prod, be, reviews, api]
     timeout-minutes: 20
     steps:
       - name: Deploy to be-shark-nyc3-01 (Reviews)
