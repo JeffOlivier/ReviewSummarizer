@@ -4,8 +4,9 @@
     "type": "module",
     "private": true,
     "scripts": {
-        "start": "bun run index.ts",
-        "dev": "bun --watch run index.ts"
+        "build": "bun build index.ts --outdir dist --target=node --format=esm --minify --sourcemap",
+        "dev": "bun --watch run index.ts",
+        "start": "bun --smol run index.ts"
     },
     "devDependencies": {
         "@types/bun": "latest",
