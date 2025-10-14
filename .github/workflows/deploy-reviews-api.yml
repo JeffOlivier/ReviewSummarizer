@@ -1,0 +1,22 @@
+name: Deploy Reviews API
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'server/**'
+      - '.github/workflows/deploy-reviews-api.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-reviews-api
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, be, backend, prod, be, reviews, api]
+    timeout-minutes: 20
+    steps:
+      - name: Deploy to be-shark-nyc3-01 (Reviews)
+        run: |
+          ~/bin/deploy-reviews.sh "${GITHUB_REF_NAME:-main}"
