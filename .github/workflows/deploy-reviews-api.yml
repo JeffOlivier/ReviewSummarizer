@@ -14,9 +14,9 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, be, nyc3, prod]  # matches your existing BE runner
+    runs-on: [self-hosted, be, backend, nyc3, prod, be, reviews, api]
     timeout-minutes: 20
     steps:
-      - name: Deploy to be-shark-nyc3-01
+      - name: Deploy to be-shark-nyc3-01 (Reviews)
         run: |
           ~/bin/deploy-reviews.sh "${GITHUB_REF_NAME:-main}"
