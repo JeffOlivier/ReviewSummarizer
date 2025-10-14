@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: Deploy to fe-shark-nyc3-01 (Reviews FE)
         run: |
-          ~/bin/deploy-reviews-fe.sh "${GITHUB_REF_NAME:-main}"
+          ~/bin/deploy-fe.sh "${GITHUB_REF_NAME:-main}"
