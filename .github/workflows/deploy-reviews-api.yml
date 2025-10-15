@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: Deploy to be-shark-nyc3-01 (Reviews)
         run: |
-          ~/bin/deploy-reviews.sh "${GITHUB_REF_NAME:-main}"
+          ~/bin/deploy-api.sh "api.reviews.jeffolivier.com" "${GITHUB_REF_NAME:-main}"

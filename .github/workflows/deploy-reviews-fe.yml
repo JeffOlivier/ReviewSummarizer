@@ -1,0 +1,22 @@
+name: Deploy Reviews FE
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'client/**'
+      - '.github/workflows/deploy-reviews-fe.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-reviews-fe
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, fe, nyc3, prod, frontend, reviews]
+    timeout-minutes: 20
+    steps:
+      - name: Deploy to fe-shark-nyc3-01 (Reviews FE)
+        run: |
+          ~/bin/deploy-fe.sh "reviews.jeffolivier.com" "${GITHUB_REF_NAME:-main}"
