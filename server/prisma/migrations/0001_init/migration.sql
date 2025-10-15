@@ -1,3 +1,5 @@
+SET search_path = app, public;
+
 -- CreateTable
 CREATE TABLE "products" (
     "id" SERIAL NOT NULL,
