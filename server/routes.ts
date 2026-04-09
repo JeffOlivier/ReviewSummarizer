@@ -4,7 +4,7 @@ import { reviewController } from './controllers/review.controller';
 const router = express.Router();
 
 // Health check
-router.get('/api/health', (_req, res) =>
+router.get('/health', (_req, res) =>
     res.json({ ok: true, time: new Date().toISOString() })
 );
 

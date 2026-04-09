@@ -17,7 +17,7 @@ app.use(
     })
 );
 app.use(express.json());
-app.use(router);
+app.use('/', router);
 
 // Recommended extras when you're behind NGINX/DO
 app.set('trust proxy', 1); // so req.ip, secure cookies, etc. work behind a proxy
